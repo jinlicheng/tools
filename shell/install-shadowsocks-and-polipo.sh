@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$#" -ne "3" ];then
+    echo "USAGE: $0 serverIp serverPort password"
+    exit 1
+fi
+
 apt update
 apt install python-pip python-setuptools m2crypto
 export LC_ALL="C"
@@ -8,11 +13,11 @@ pip install shadowsocks
 mkdir /etc/shadowsocks
 cat <<EOF >/etc/shadowsocks/config.json
 {
-  "server":"serverIp",
-  "server_port":port,
+  "server":"$1",
+  "server_port":$2,
   "local_address":"127.0.0.1",
   "local_port":1080,
-  "password":"password",
+  "password":"$3",
   "timeout":300,
   "method":"aes-256-cfb",
   "fast-open": false
