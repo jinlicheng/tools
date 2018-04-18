@@ -37,7 +37,7 @@
         name: polipo
     - name: config polipo
       template:
-        src: ./resource/polipo.config
+        src: ./resource/pp.config.j2
         dest: /etc/polipo/config
     - name: restart polipo
       shell: /etc/init.d/polipo stop && /etc/init.d/polipo start

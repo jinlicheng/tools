@@ -1,0 +1,17 @@
+[Unit]
+Description=shadowsocks service
+After=network.target firewalld.service
+
+[Service]
+Type=forking
+Restart=no
+TimeoutSec=5min
+IgnoreSIGPIPE=no
+KillMode=process
+GuessMainPID=no
+ExecStart=/usr/local/bin/sslocal -c /etc/shadowsocks/config.json -d start
+ExecStop=/usr/local/bin/sslocal -c /etc/shadowsocks/config.json -d stop
+
+[Install]
+WantedBy=multi-user.target
+
