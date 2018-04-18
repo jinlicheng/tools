@@ -1,0 +1,43 @@
+---
+- hosts: all
+  vars:
+    serverIp: xxx.xxx.xxx.xxx
+    serverPort: 10000
+    password: password
+    ppIpAddress: yyy.yyy.yyy.yyy
+    ppPort: 8123
+  tasks:
+    - name: install python-pip
+      apt: 
+        name: python-pip
+        update_cache: yes
+    - name: install python-setuptools
+      apt:
+        name: python-setuptools
+    - name: install m2crypto
+      apt:
+        name: m2crypto
+    - name: install shadowsocks
+      apt:
+        name: shadowsocks
+    - name: mkdir shadowsocks dir
+      shell: mkdir /etc/shadowsocks
+    - name: copy shadowsocks config to dest
+      template:
+        src: ./resource/ss.config.j2 
+        dest: /etc/shadowsocks/config.json
+    - name: make shadowsocks service
+      copy:
+        src: ./resource/shadowsocks.service
+        dest: /etc/systemd/system/multi-user.target.wants/shadowsocks.service
+    - name: daemon reload
+      shell: systemctl daem-reload && systemctl restart shadowsocks.service
+    - name: install polipo
+      apt:
+        name: polipo
+    - name: config polipo
+      template:
+        src: ./resource/polipo.config
+        dest: /etc/polipo/config
+    - name: restart polipo
+      shell: /etc/init.d/polipo stop && /etc/init.d/polipo start

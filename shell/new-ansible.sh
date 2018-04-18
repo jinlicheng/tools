@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne "1" ];then
-    echo "USAGE: $0 serverIp"
+    echo "USAGE: $0 name"
     exit 1
 fi
 
