@@ -1,0 +1,24 @@
+# command cd base
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias dl='cd ~/Downloads'
+alias doc='cd ~/Documents'
+alias cdw="cd ~/WorkSpace"
+alias cdgo="cd ~/WorkSpace/go/src/"
+
+# commad system or tools
+alias k='clear'
+alias find='find 2>/dev/null'
+alias nst='netstat -nutlp'
+alias nstg="netstat -nutlp |grep"
+alias ddc='docker-compose'
+alias dlog="journalctl -u docker -f -n 0"
+alias via="vi ~/.bash_aliases"
+
+# command kubectl
+alias kc='kubectl'
+alias kcg='kubectl get'
+alias kcb='kubectl describe'
+alias kce='kubectl explain'
+

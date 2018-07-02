@@ -4,7 +4,7 @@
     - name: make docker proxy conf dir
       shell: mkdir -p /etc/systemd/system/docker.service.d/
     - name: copy docker proxy conf file
-      copy: src=./resource/http-proxy.conf dest=/etc/systemd/system/docker.service.d/http-proxy.conf
+      template: src=./resource/http-proxy.conf dest=/etc/systemd/system/docker.service.d/http-proxy.conf
     - name: reload daemon
       shell: systemctl daemon-reload
     - name: restart docker service
