@@ -1,4 +1,9 @@
-#!/bain/bash
+#!/bin/bash
+
+# http_proxy like http://127.0.0.1:8123
+# noProxy like 192.168.0.0/16,172.18.0.0/16
+# apiServer is a ip
+# podNewwork is cidr like 192.168.0.0/16
 
 if [ "$#" -ne "4" ];then
     echo "USAGE: $0 httpProxy noProxy apiserver podNetwork"
