@@ -51,7 +51,7 @@ apt install -y polipo
 cat <<EOF >> /etc/polipo/config
 socksParentProxy = 127.0.0.1:1080
 socksProxyType = socks5
-proxyAddress = 192.168.200.180
+proxyAddress = 127.0.0.1
 proxyPort = 8123
 EOF
 
