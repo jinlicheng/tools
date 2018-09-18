@@ -39,6 +39,6 @@ rabbitmqctl list_permissions -p "test"
 ```
 
 ## URL
-rabbitmq console http://127.0.0.1:15672/
+rabbitmq console http://127.0.0.1:15672/  
 haproxy console http://127.0.0.1:5669/haproxy?stats
 
