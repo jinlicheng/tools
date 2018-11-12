@@ -1,0 +1,15 @@
+version: '2'
+services:
+  zentao-server:
+    image: idoop/zentao:10.4
+    restart: always
+    ports:
+      - "20080:80"
+      - "23306:3306"
+    environment:
+      - USER="root"
+      - PASSWD="password"
+      - BIND_ADDRESS="false"
+      - SMTP_HOST="163.177.90.125 smtp.exmail.qq.com"
+    volumes:
+      - /data/zbox/:/opt/zbox/
