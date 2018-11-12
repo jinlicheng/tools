@@ -3,7 +3,7 @@ services:
   rabbit1:
     image: rabbitmq:3.7-management
     hostname: rabbit1
-    restart: always
+    restart: on-failure
     ports:
       - "15672:15672"
     environment:
@@ -11,18 +11,18 @@ services:
   rabbit2:
     image: rabbitmq:3.7-management
     hostname: rabbit2
-    restart: always
+    restart: on-failure
     environment:
       - RABBITMQ_ERLANG_COOKIE='rabbitcookie'
   rabbit3:
     image: rabbitmq:3.7-management
     hostname: rabbit3
-    restart: always
+    restart: on-failure
     environment:
       - RABBITMQ_ERLANG_COOKIE='rabbitcookie'
   haproxy:
     image: haproxy:1.5.19-alpine
-    restart: always
+    restart: on-failure
     ports:
       - "5671:5671"
       - "5669:5669"
