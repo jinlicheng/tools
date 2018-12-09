@@ -68,7 +68,7 @@ replicate-wild-ignore-table=performance_schema.%
 ```shell
 grant replication slave on *.* to 'bak'@'172.18.0.%' identified by 'bakpassword';
 flush privileges;
-source /root/hellodb.sql;
+source $PWD/createDatabase.sql;
 ```
 
 ### 2. 将B主机的Master指向A主机(172.18.0.3)
