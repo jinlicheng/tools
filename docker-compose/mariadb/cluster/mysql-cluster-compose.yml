@@ -1,0 +1,35 @@
+version: '2'
+services:
+  master1:
+    image: mariadb:10.1.37
+    hostname: master1
+    restart: always
+    ports:
+      - "4406:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - $PWD/master1.cnf:/etc/mysql/conf.d/cluster.cnf
+    networks:
+      extnetwork:
+        ipv4_address: 172.18.0.2
+  master2:
+    image: mariadb:10.1.37
+    hostname: master2
+    restart: always
+    ports:
+      - "4407:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - $PWD/master2.cnf:/etc/mysql/conf.d/cluster.cnf
+    networks:
+      extnetwork:
+        ipv4_address: 172.18.0.3
+networks:
+  extnetwork:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.18.0.0/16
+        gateway: 172.18.0.1
