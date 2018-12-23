@@ -1,0 +1,21 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:11.1-alpine
+    hostname: postgres
+    restart: on-failure
+    ports:
+      - "5432:5432"
+    environment:
+        - POSTGRES_DB=sonar
+        - POSTGRES_USER=sonar
+        - POSTGRES_PASSWORD=sonar
+  sonar:
+    image: sonarqube:7.4-community
+    restart: on-failure
+    ports:
+      - "9000:9000"
+    environment:
+        - sonar.jdbc.username=sonar
+        - sonar.jdbc.password=sonar
+        - sonar.jdbc.url=jdbc:postgresql://postgres/sonar
