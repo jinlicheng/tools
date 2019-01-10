@@ -1,0 +1,12 @@
+version: '2'
+services:
+  swagger-ui:
+    image: swaggerapi/swagger-ui:v3.20.4
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+        - BASE_URL=/swagger
+        - SWAGGER_JSON=/foo/kubernetes1.8.12.swagger.json
+    volumes:
+      - $PWD/apis:/foo
