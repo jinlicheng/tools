@@ -1,0 +1,29 @@
+# aliases
+alias cdw='cd ~/Workspaces'
+alias dl='cd ~/Downloads'
+alias doc='cd ~/Documents'
+alias hhp='http_proxy=http://127.0.0.1:1087 https_proxy=http://127.0.0.1:1087'
+alias k=clear
+
+# environments
+## build tools
+M2_HOME=/Users/kelvin/Softwares/apache-maven-3.6.0
+GRADLE_HOME=/Users/kelvin/Softwares/gradle-5.2.1
+
+## groovy
+GROOVY_HOME=/Users/kelvin/Softwares/groovy-2.5.6
+
+## golang
+GOROOT=/Users/kelvin/Softwares/sdk/go1.11.2
+GOPATH=/Users/kelvin/Workspaces/gopath
+GOBIN=/Users/kelvin/Workspaces/gopath/bin
+
+## nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+#NVM_DIR=/Users/kelvin/.nvm
+#NVM_CD_FLAGS=-q
+#NVM_BIN=/Users/kelvin/.nvm/versions/node/v8.15.1/bin
+
+PATH=$GOROOT/bin:$GOPATH/bin:$GOROOT/bin:$GOPATH/bin:$PATH:$M2_HOME/bin:$GRADLE_HOME/bin:$GROOVY_HOME/bin

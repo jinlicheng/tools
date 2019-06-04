@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.6
+    hostname: mysql-db
+    restart: always
+    environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=jira
+        - MYSQL_USER=jira
+        - MYSQL_PASSWORD=jira
+  sonar:
+    image: sonarqube:7.4-community
+    restart: on-failure
+    ports:
+      - "9000:9000"
+    environment:
+        - sonar.jdbc.username=sonar
+        - sonar.jdbc.password=sonar
+        - sonar.jdbc.url=jdbc:postgresql://postgres/sonar

@@ -1,0 +1,22 @@
+[client-server]
+[mysqld]
+max_connections=1000
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+log-error=/var/log/mysqld.log
+server-id=2
+auto-increment-increment=2
+auto-increment-offset=2
+symbolic-links=0
+explicit_defaults_for_timestamp=1
+character_set_server=utf8
+interactive_timeout=57600
+log-bin=mysql-bin
+binlog_format=MIXED
+expire-logs-days=10
+binlog-ignore-db=mysql
+binlog-ignore-db=information_schema
+replicate-wild-ignore-table=mysql.%
+replicate-wild-ignore-table=information_schema.%
+replicate-wild-ignore-table=performance_schema.%
+!includedir /etc/mysql/conf.d/
