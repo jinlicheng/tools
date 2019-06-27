@@ -11,6 +11,7 @@ if [ "$2" == "web" ];then
         -DartifactId=$1 \
         -DarchetypeArtifactId=maven-archetype-webapp \
         -DinteractiveMode=false
+	 -DarchetypeCatalog=internal
     exit 0
 else
     mvn archetype:generate \
@@ -18,6 +19,7 @@ else
         -DartifactId=$1 \
         -DarchetypeArtifactId=maven-archetype-quickstart \
         -DinteractiveMode=false
+	-DarchetypeCatalog=internal
     exit 0
 fi
 
