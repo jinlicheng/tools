@@ -10,15 +10,15 @@ if [ "$2" == "web" ];then
         -DgroupId=personal.jlc \
         -DartifactId=$1 \
         -DarchetypeArtifactId=maven-archetype-webapp \
-        -DinteractiveMode=false
-	 -DarchetypeCatalog=internal
+        -DinteractiveMode=false \
+	-DarchetypeCatalog=internal
     exit 0
 else
     mvn archetype:generate \
         -DgroupId=personal.jlc \
         -DartifactId=$1 \
         -DarchetypeArtifactId=maven-archetype-quickstart \
-        -DinteractiveMode=false
+        -DinteractiveMode=false \
 	-DarchetypeCatalog=internal
     exit 0
 fi
