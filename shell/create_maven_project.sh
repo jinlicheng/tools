@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# create_maven_project web/normal groupId artifactId name
+
 if [ "$#" -ne "2" ];then
     echo "USAGE: $0 artifactId type"
     exit 1
