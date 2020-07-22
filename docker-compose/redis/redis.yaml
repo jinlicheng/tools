@@ -1,0 +1,70 @@
+version: '3'
+services:
+  redis1:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7000"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  redis2:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7001"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  redis3:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7002"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  redis4:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    ports:
+      - "7003:6379"
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7003"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  redis5:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7004"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+  redis6:
+    image: redis:6.0.5-alpine3.12
+    network_mode: host
+    restart: unless-stopped
+    command:
+      - redis-server
+      - /usr/local/etc/redis/redis.conf
+      - --port
+      - "7005"
+    volumes:
+      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
