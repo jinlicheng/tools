@@ -1,5 +1,5 @@
 sudo docker run --detach \
-    --hostname 42.62.51.56 \
+    --hostname 10.20.1.7 \
     --publish 3443:443 --publish 3080:80 --publish 30022:22 \
     --name gitlab \
     --restart always \
