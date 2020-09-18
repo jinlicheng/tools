@@ -10,8 +10,8 @@ sudo docker run --detach \
     --volume /srv/gitlab/data:/var/opt/gitlab \
     gitlab/gitlab-ce:11.0.3-ce.0
 
-echo "modify /srv/gitlab/config/gitlab.rb"
-echo "external_url 'http://192.168.2.102:82'"
-echo "nginx['listen_port'] = 82"
-echo "gitlab_rails['gitlab_shell_ssh_port'] = 2222"
+echo "# modify /srv/gitlab/config/gitlab.rb"
+echo "external_url 'http://10.20.1.7:3080'"
+echo "nginx['listen_port'] = 3080"
+echo "gitlab_rails['gitlab_shell_ssh_port'] = 30022"
 
